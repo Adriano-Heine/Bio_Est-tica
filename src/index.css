@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --color-nude-bg: #F8F1EC;
+  --color-nude-card: #FFFFFF;
+  --color-rose-accent: #C98F83;
+  --color-rose-hover: #B67B6F;
+  --color-rose-light: #F5EAE4;
+  --color-brown-text: #5A4038;
+  --color-brown-muted: #8C6E65;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  background-color: #F8F1EC;
+  color: #5A4038;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.font-serif-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* Custom smooth scroll bar and subtle shadows */
+.custom-shadow {
+  box-shadow: 0 4px 20px -2px rgba(90, 64, 56, 0.06), 0 2px 6px -1px rgba(90, 64, 56, 0.03);
+}
+
+.custom-shadow-hover {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-shadow-hover:hover {
+  box-shadow: 0 8px 25px -4px rgba(201, 143, 131, 0.18), 0 4px 10px -2px rgba(90, 64, 56, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E4D5CD;
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C98F83;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #E4D5CD transparent;
+}
+
+/* Hide scrollbar for clean horizontal list if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
