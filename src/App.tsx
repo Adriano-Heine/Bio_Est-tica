@@ -8,7 +8,6 @@ import { MainCTAButtons } from './components/MainCTAButtons';
 import { FooterMenu } from './components/FooterMenu';
 import { Footer } from './components/Footer';
 import { InfoModal } from './components/InfoModal';
-import { QuickEditorDrawer } from './components/QuickEditorDrawer';
 import { GoogleSheetsSyncModal } from './components/GoogleSheetsSyncModal';
 import { Icon } from './components/Icon';
 import { syncWithGoogleSheet } from './services/sheetSync';
@@ -87,12 +86,6 @@ export default function App() {
     setSelectedTreatment(null);
   };
 
-  const handleResetConfig = () => {
-    localStorage.removeItem('bio_sheet_config');
-    localStorage.removeItem('bio_sheet_url');
-    setConfig(BIO_CONFIG);
-  };
-
   return (
     <div className="min-h-screen bg-[#F4EDE8] sm:py-6 flex flex-col justify-start items-center">
       {/* Barra de Status da Planilha se Conectada */}
@@ -159,13 +152,15 @@ export default function App() {
         onUpdateConfig={setConfig}
       />
 
-      {/* Editor Rápido Interativo para Personalização Instantânea */}
-      <QuickEditorDrawer
-        config={config}
-        onUpdateConfig={setConfig}
-        onResetConfig={handleResetConfig}
-        onOpenSheetModal={() => setIsSheetModalOpen(true)}
-      />
+      {/* Botão ÚNICO flutuante de Conectar Planilha Google */}
+      <button
+        onClick={() => setIsSheetModalOpen(true)}
+        className="fixed bottom-4 right-4 z-40 flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#1E7E34] text-white text-xs font-semibold shadow-lg hover:bg-[#166528] active:scale-95 transition-all cursor-pointer border border-white/20"
+        title="Conectar ou Atualizar Planilha Google Sheets"
+      >
+        <Icon name="FileSpreadsheet" className="w-4 h-4 text-emerald-200" />
+        <span>Conectar Planilha Google</span>
+      </button>
     </div>
   );
 }
