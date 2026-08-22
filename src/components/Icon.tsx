@@ -29,6 +29,12 @@ import {
   Upload,
   Image as ImageIcon,
   Camera,
+  FileSpreadsheet,
+  RefreshCw,
+  Download,
+  AlertCircle,
+  Database,
+  Link as LinkIcon,
   Sparkle
 } from 'lucide-react';
 
@@ -100,6 +106,18 @@ export const Icon: React.FC<IconProps> = ({ name, className = 'w-5 h-5', size })
       return <ImageIcon {...iconProps} />;
     case 'Camera':
       return <Camera {...iconProps} />;
+    case 'FileSpreadsheet':
+      return <FileSpreadsheet {...iconProps} />;
+    case 'RefreshCw':
+      return <RefreshCw {...iconProps} />;
+    case 'Download':
+      return <Download {...iconProps} />;
+    case 'AlertCircle':
+      return <AlertCircle {...iconProps} />;
+    case 'Database':
+      return <Database {...iconProps} />;
+    case 'Link':
+      return <LinkIcon {...iconProps} />;
     default:
       return <Sparkle {...iconProps} />;
   }

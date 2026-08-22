@@ -56,6 +56,11 @@ export interface BioConfig {
   promocoesAtivas: { titulo: string; descricao: string; dePor?: string }[];
   duvidasFrequentes: { pergunta: string; resposta: string }[];
 
+  // Configuração de Sincronização com Google Sheets
+  googleSheetUrl?: string;
+  sheetSyncEnabled?: boolean;
+  lastSyncTime?: string;
+
   // Lista de Diferenciais
   diferenciais: DifferentialItem[];
 
